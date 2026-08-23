@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🕐 World Clock</h1>
+            <p class="subtitle">Time around the globe</p>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="addCityBtn" class="btn btn-primary">+ Add City</button>
+            <button id="settingsBtn" class="btn btn-secondary">⚙️ Settings</button>
+            <select id="formatSelect" class="format-select">
+                <option value="12">12-Hour Format</option>
+                <option value="24">24-Hour Format</option>
+            </select>
+        </div>
+
+        <!-- Clocks Container -->
+        <div class="clocks-container" id="clocksContainer">
+            <!-- Clocks will be added here by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <p>No cities added yet</p>
+            <button id="addFirstCity" class="btn btn-primary">Add Your First City</button>
+        </div>
+    </div>
+
+    <!-- Modal for Adding City -->
+    <div class="modal" id="addCityModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add City</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="citySearch" class="search-input" placeholder="Search city...">
+                <div class="city-list" id="cityList">
+                    <!-- Cities will be added here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Settings -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="close-btn" id="closeSettings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <label>Time Format</label>
+                    <select id="settingsFormat">
+                        <option value="12">12-Hour (AM/PM)</option>
+                        <option value="24">24-Hour</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Theme</label>
+                    <select id="themeSelect">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Show Seconds</label>
+                    <input type="checkbox" id="showSeconds" checked>
+                </div>
+                <div class="setting-item">
+                    <label>Show Date</label>
+                    <input type="checkbox" id="showDate" checked>
+                </div>
+                <button class="btn btn-danger" id="clearAll">Clear All Cities</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
